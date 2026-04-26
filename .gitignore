@@ -1,0 +1,136 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/gradle,intellij+all
+# Edit at https://www.toptal.com/developers/gitignore?templates=gradle,intellij+all
+
+### Intellij+all ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff
+backend/.idea/**/workspace.xml
+backend/.idea/**/tasks.xml
+backend/.idea/**/usage.statistics.xml
+backend/.idea/**/dictionaries
+backend/.idea/**/shelf
+
+# AWS User-specific
+backend/.idea/**/aws.xml
+
+# Generated files
+backend/.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+backend/.idea/**/dataSources/
+backend/.idea/**/dataSources.ids
+backend/.idea/**/dataSources.local.xml
+backend/.idea/**/sqlDataSources.xml
+backend/.idea/**/dynamic.xml
+backend/.idea/**/uiDesigner.xml
+backend/.idea/**/dbnavigator.xml
+
+# Gradle
+backend/.idea/**/gradle.xml
+backend/.idea/**/libraries
+
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
+
+# CMake
+backend/cmake-build-*/
+# Mongo Explorer plugin
+backend/.idea/**/mongoSettings.xml
+
+# File-based project format
+backend/*.iws
+
+# IntelliJ
+backend/out/
+
+# mpeltonen/sbt-idea plugin
+backend/.idea_modules/
+
+# JIRA plugin
+backend/atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+backend/.idea/replstate.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+backend/com_crashlytics_export_strings.xml
+backend/crashlytics.properties
+backend/crashlytics-build.properties
+backend/fabric.properties
+
+# Editor-based Rest Client
+backend/.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+backend/.idea/caches/build_file_checksums.ser
+
+### Intellij+all Patch ###
+# Ignores the whole .idea folder and all .iml files
+# See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
+
+backend/.idea/
+
+# Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
+
+*.iml
+modules.xml
+.idea/misc.xml
+*.ipr
+
+# Sonarlint plugin
+.idea/sonarlint
+
+### Gradle ###
+.gradle
+build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+### Gradle Patch ###
+**/build/
+
+# Eclipse Gradle plugin generated files
+# Eclipse Core
+.project
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# End of https://www.toptal.com/developers/gitignore/api/gradle,intellij+all
+
+.kotlin/
+data/
+test-module/
+
+kotlin-js-store/
+
+output/
+
+projects.zip
+
+.idea/
+
+old-frontend/
+/backend/data-ktor/

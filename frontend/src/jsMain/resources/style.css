@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-sans: Poppins, sans-serif;
+    --color-darker-background: #0f0f11;
+    --color-dark-background: #141417;
+    --color-dark-surface: #2a2a31;
+    --color-light-surface: #cdcdd5;
+    --color-light-background: #e9e9ec;
+    --color-dark-surface-transparent: rgba(31, 31, 33, 0.6);
+    --color-dark-text-primary: #f3f6f7;
+    --color-dark-text-secondary: #B3B3B3;
+    --color-light-text: #050505;
+
+    --color-dark-surface-hover: rgb(40, 40, 45);
+    --color-disabled: oklch(0.299 0.007 285.959);
+
+    --hint-info: #29b6f6;
+    --hint-success: #66bb6a;
+    --hint-warning: #ffa726;
+    --hint-error: #f44336;
+
+    --color-primary: #8d4eb8;
+    --color-secondary: #5F3D91;
+}
+
+:root {
+    --timing-function: linear(0, 0.038 1.2%, 0.158 2.6%, 0.793 7.4%, 1.02 9.5%, 1.165 11.6%, 1.207 12.7%, 1.227 13.8%, 1.228 15.2%, 1.203 16.8%, 0.99 24.3%, 0.96 26.3%, 0.947 28.3%, 0.951 30.9%, 0.999 38.1%, 1.012 42.6%, 0.997 57%, 1);
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    @apply bg-darker-background text-dark-text-secondary;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-padding-top: 60px;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+p:empty {
+    display: none;
+}
+
+.noise {
+    background-image: url("/assets/noise-light.png");
+}
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::before,
+[data-tooltip]::after {
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    bottom: calc(100% + 12px);
+    transform: translateX(-50%) translateY(4px);
+
+    min-width: max-content;
+    max-width: 220px;
+    width: max-content;
+
+    text-align: center;
+    white-space: normal;
+    text-transform: none;
+    letter-spacing: normal;
+
+    border-radius: 6px;
+    background: #202023;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    padding: 0.65em 0.9em;
+}
+
+[data-tooltip]::after {
+    content: "";
+    bottom: 100%;
+    transform: translateX(-50%) translateY(4px);
+    border: 8px solid transparent;
+    border-top-color: #202023;
+}
+
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+    opacity: 1;
+}
+
+[data-tooltip]:hover::before {
+    transform: translateX(-50%) translateY(0);
+}
+
+[data-tooltip]:hover::after {
+    transform: translateX(-50%) translateY(0);
+}
+
+.skeleton-shimmer {
+    background: linear-gradient(
+            90deg,
+            oklch(0.2 0 0) 0%,
+            oklch(0.239 0 89.876) 40%,
+            oklch(0.2 0 0) 60%,
+            oklch(0.2 0 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.small-screen-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.5s, display 0.5s, overlay 0.5s;
+    transition-timing-function: var(--timing-function);
+    transition-behavior: allow-discrete;
+}
+
+.small-screen-sidebar:popover-open {
+    transform: translateX(0);
+
+    @starting-style {
+        transform: translateX(-100%);
+    }
+}
+
+.sidebar {
+    transition: translate 0.5s var(--timing-function);
+}
+
+.dropdown {
+    position: absolute;
+    transition: transform 0.5s var(--timing-function), opacity 0.1s linear;
+}
+
+.dropdown-open {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.dropdown-closed {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.search-area {
+    transition: opacity 0.2s ease;
+}
