@@ -16,7 +16,7 @@ private const val PANE_CLASSES = "bg-dark-background/40 backdrop-blur-xl border 
 
 public fun main() {
     app {
-        // Github Pages doesn't serve it to index, so this is a workaround.
+        // GitHub Pages doesn't serve it to index, so this is a workaround.
         route("/random-reaper", FlowContent::page)
     }
 }
@@ -60,7 +60,7 @@ private fun FlowContent.page(route: Route) {
                                 div(className = "relative") {
                                     div(className = "absolute inset-0 bg-primary/20 blur-3xl rounded-full") {}
                                     img(
-                                        src = "/assets/bosses/${chosen?.image ?: chosen?.id}.png",
+                                        src = "./assets/bosses/${chosen?.image ?: chosen?.id}.png",
                                         alt = chosen?.fullName ?: "Error",
                                         className = "relative max-w-lg max-h-80 object-contain drop-shadow-2xl"
                                     )
