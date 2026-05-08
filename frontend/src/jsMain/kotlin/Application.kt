@@ -16,11 +16,12 @@ private const val PANE_CLASSES = "bg-dark-background/40 backdrop-blur-xl border 
 
 public fun main() {
     app {
-        index(FlowContent::index)
+        // Github Pages doesn't serve it to index, so this is a workaround.
+        route("/random-reaper", FlowContent::page)
     }
 }
 
-private fun FlowContent.index(route: Route) {
+private fun FlowContent.page(route: Route) {
     val selectedState = localStorageSetStateOf(key = "reaper_preference")
 
     div(className = "relative min-h-screen w-full flex items-center justify-center p-6 select-none") {
