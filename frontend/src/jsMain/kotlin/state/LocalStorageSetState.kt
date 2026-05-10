@@ -40,7 +40,7 @@ public class LocalStorageSetState(
     }
 
     private fun loadLocal() {
-        val stored = localStorage[key]?.split(",") ?: return
+        val stored = localStorage[key]?.trim()?.split(",")?.filter { it.isNotBlank() } ?: return
         backing.addAll(stored.map(SoulReaper::valueOf))
     }
 }
